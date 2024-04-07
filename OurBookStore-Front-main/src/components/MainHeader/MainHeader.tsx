@@ -49,7 +49,7 @@ const MainHeader: React.FC = () => {
   // 注销操作
   const handleLogout = () => {
     localStorage.removeItem("token");
-    setMemberInfo(null); // 清除用户信息
+    setMemberInfo(null);
     setIsLoggedIn(false);
     navigate("/member-login");
   };
