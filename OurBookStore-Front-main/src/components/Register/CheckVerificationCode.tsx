@@ -23,7 +23,7 @@ function CheckVerificationCode() {
 
       if (response.data) {
         alert("驗證成功！");
-        navigate("/MemberLoginForm"); // 驗證成功後導航到成功頁面
+        navigate("/member-login"); // 驗證成功後導航到成功頁面
       } else {
         alert("驗證碼錯誤或已過期");
       }
@@ -60,23 +60,30 @@ function CheckVerificationCode() {
     <div>
       <h1>驗證電子信箱</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="電子信箱"
-          value={email}
-          // readOnly
-          // onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="請輸入驗證碼"
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-        />
-        <button type="submit">提交驗證碼</button>
-        <button type="button" onClick={sendVerificationCodeAgain}>
-          重新發送驗證碼
-        </button>
+        <div>
+          <input
+            type="email"
+            placeholder="電子信箱"
+            value={email}
+            readOnly // 如果email不能更改，保持readOnly属性
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="請輸入驗證碼"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+          />
+        </div>
+        <div>
+          <button type="submit">提交驗證碼</button>
+        </div>
+        <div>
+          <button type="button" onClick={sendVerificationCodeAgain}>
+            重新發送驗證碼
+          </button>
+        </div>
       </form>
     </div>
   );

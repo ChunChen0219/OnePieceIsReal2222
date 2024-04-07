@@ -24,7 +24,7 @@ export async function action({ request }: { request: Request }) {
 }
 function logout() {
   localStorage.removeItem("token");
-  window.location.href = "/MemberLoginForm";
+  window.location.href = "/member-login";
 }
 
 function MemberLoginForm() {
