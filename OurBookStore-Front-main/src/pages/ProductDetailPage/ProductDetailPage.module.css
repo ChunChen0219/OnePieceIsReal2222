@@ -1,0 +1,4 @@
+.pdTbodyColor > tr > td,
+.pdTbodyColor > tr > th {
+  background-color: #f7f7f7;
+}
